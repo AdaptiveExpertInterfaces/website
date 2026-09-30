@@ -126,17 +126,6 @@
             line-height: 1.65;
             font-weight: 400;
         }
-        .caroda-mark {
-            white-space: nowrap;
-        }
-        .caroda-icon {
-            display: inline-block;
-            height: 1.3em;
-            width: auto;
-            vertical-align: -0.2em;
-            margin-right: 0.3em;
-            transform: translateX(2px);
-        }
         .contact-row {
             display: flex;
             flex-wrap: wrap;
@@ -185,42 +174,234 @@
             }
         }
 
-        .history-section {
-            text-align: center;
+        .case-card {
+            display: flex;
+            flex-direction: column;
         }
-        .history-section .section-label {
-            margin-left: auto;
-            margin-right: auto;
+        .case-head {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.875rem;
         }
-        .history-list {
-            position: relative;
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 0.25rem 0;
+        .case-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--border-radius-md);
+            object-fit: contain;
+            flex-shrink: 0;
         }
-        .history-list::before {
-            content: '';
-            position: absolute;
-            left: 14px;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background: var(--color-border-tertiary);
+        .case-icon.is-caroda {
+            padding: 4px;
+            border: 0.5px solid var(--color-border-tertiary);
+            background: var(--color-background-primary);
         }
-        .history-item {
-            position: relative;
-            padding-left: 2.5rem;
-            text-align: left;
-            margin-bottom: 1.75rem;
-        }
-        .history-item:last-child {
+        .case-head .section-heading {
             margin-bottom: 0;
         }
-        .history-item::before {
+        .section-title {
+            display: block;
+            text-align: center;
+            font-family: var(--font-sans);
+            font-size: 1.75rem;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            line-height: 1.15;
+            color: var(--color-text-primary);
+            margin-bottom: 1.5rem;
+            text-wrap: balance;
+        }
+        .section-title .eyebrow {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--color-text-tertiary);
+            margin-bottom: 0.5rem;
+        }
+        .case-meta {
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--color-text-tertiary);
+            margin-top: 0.125rem;
+        }
+        .case-meta .status {
+            color: var(--brand-orange);
+        }
+        .case-stats {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            justify-content: start;
+            column-gap: 3rem;
+            margin: 1.125rem 0;
+            padding: 0.875rem 0;
+            border-top: 0.5px solid var(--color-border-tertiary);
+            border-bottom: 0.5px solid var(--color-border-tertiary);
+        }
+        .case-stat .value,
+        .case-stat .label {
+            white-space: nowrap;
+        }
+        .case-stat .value {
+            font-family: var(--font-mono);
+            font-size: 1.0625rem;
+            font-weight: 500;
+            color: var(--color-text-primary);
+            line-height: 1.2;
+        }
+        .case-stat .label {
+            font-family: var(--font-mono);
+            font-size: 0.625rem;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            color: var(--color-text-tertiary);
+            margin-top: 0.25rem;
+        }
+        .case-card .body-text {
+            font-size: 0.875rem;
+        }
+        .case-footer {
+            margin-top: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.3px;
+        }
+        .case-stats.is-four {
+            grid-template-columns: auto auto auto auto;
+            column-gap: 2.5rem;
+            row-gap: 1rem;
+        }
+        .channel-split .case-footer {
+            margin-top: 0.75rem;
+        }
+        .case-footer a {
+            overflow-wrap: anywhere;
+        }
+        @media (max-width: 480px) {
+            .case-stats.is-four {
+                grid-template-columns: 1fr 1fr;
+                column-gap: 1.5rem;
+            }
+        }
+        .engine-mark {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--border-radius-md);
+            display: grid;
+            place-items: center;
+            background: var(--brand-surface);
+            color: var(--brand-primary);
+            font-family: var(--font-mono);
+            font-weight: 500;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            flex-shrink: 0;
+        }
+        .pill {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.625rem;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 0.15rem 0.5rem;
+            border-radius: 999px;
+            border: 0.5px solid var(--color-border-tertiary);
+            color: var(--color-text-tertiary);
+            white-space: nowrap;
+        }
+        .pill.is-live {
+            color: var(--brand-orange-deep);
+            border-color: var(--brand-orange-soft);
+            background: var(--brand-orange-surface);
+        }
+        .pill.is-exit {
+            color: var(--brand-deep);
+            border-color: var(--brand-accent);
+            background: var(--brand-surface);
+        }
+        .case-meta .pill {
+            margin-left: 0.35rem;
+            vertical-align: middle;
+            transform: translateY(-1px);
+        }
+        .channel-split {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+        }
+        .channel-split > div {
+            display: flex;
+            flex-direction: column;
+        }
+        .channel-head {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 0.5rem;
+        }
+        .channel-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: var(--border-radius-md);
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+        .channel-name {
+            font-weight: 500;
+            color: var(--color-text-primary);
+            font-size: 0.9375rem;
+        }
+        @media (min-width: 640px) {
+            .channel-split {
+                grid-template-columns: 1fr 1fr;
+                gap: 0;
+            }
+            .channel-split > div + div {
+                border-left: 0.5px solid var(--color-border-tertiary);
+                padding-left: 1.25rem;
+                margin-left: 1.25rem;
+            }
+        }
+        @media (max-width: 639px) {
+            .channel-split > div + div {
+                border-top: 0.5px solid var(--color-border-tertiary);
+                padding-top: 1.25rem;
+            }
+        }
+        .cs-layout {
+            display: grid;
+            grid-template-columns: 170px 1fr;
+            gap: 2.25rem;
+            align-items: start;
+        }
+        .cs-index {
+            position: sticky;
+            top: 1.5rem;
+        }
+        .cs-index a {
+            position: relative;
+            display: block;
+            padding: 0.4rem 0 0.4rem 1.1rem;
+            border-left: 1px solid var(--color-border-tertiary);
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            color: var(--color-text-tertiary);
+            text-decoration: none;
+        }
+        .cs-index a::before {
             content: '';
             position: absolute;
-            left: 10px;
-            top: 6px;
+            left: -5px;
+            top: 0.75rem;
             width: 9px;
             height: 9px;
             border-radius: 50%;
@@ -228,64 +409,101 @@
             border: 1.5px solid var(--color-text-tertiary);
             box-sizing: border-box;
         }
-        .history-item.is-current::before {
+        .cs-index a span {
+            display: block;
+            font-family: var(--font-sans);
+            text-transform: none;
+            letter-spacing: 0;
+            font-size: 0.8125rem;
+            color: var(--color-text-secondary);
+            margin-top: 0.1rem;
+        }
+        .cs-index a.is-current {
+            color: var(--brand-orange);
+        }
+        .cs-index a.is-current::before {
             background: var(--brand-orange);
             border-color: var(--brand-orange);
             box-shadow: 0 0 0 3px var(--brand-orange-surface);
         }
-        @media (min-width: 640px) {
-            .history-list::before {
-                left: 50%;
-                transform: translateX(-0.5px);
-            }
-            .history-item {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                column-gap: 3rem;
-                padding-left: 0;
-                margin-bottom: 2rem;
-            }
-            .history-item .history-body {
-                grid-column: 1;
-                text-align: right;
-                padding-right: 1.25rem;
-            }
-            .history-item:nth-child(even) .history-body {
-                grid-column: 2;
-                text-align: left;
-                padding-right: 0;
-                padding-left: 1.25rem;
-            }
-            .history-item::before {
-                left: 50%;
-                transform: translateX(-50%);
-            }
+        .cs-index a.is-active::before {
+            border-color: var(--color-text-primary);
         }
-        .history-date {
+        .cs-index a.is-active span {
+            color: var(--color-text-primary);
+            font-weight: 500;
+        }
+        .cs-index a.is-current.is-active::before {
+            border-color: var(--brand-orange);
+        }
+        .cs-stream {
+            min-width: 0;
+        }
+        .cs-entry {
+            padding-bottom: 2rem;
+            scroll-margin-top: 1.5rem;
+        }
+        .cs-entry:last-child {
+            padding-bottom: 0;
+        }
+        .cs-date {
+            display: block;
             font-family: var(--font-mono);
             font-size: 0.6875rem;
             letter-spacing: 1px;
             text-transform: uppercase;
             color: var(--color-text-tertiary);
-            line-height: 1.5;
+            margin-bottom: 0.4rem;
         }
-        .history-item.is-current .history-date {
+        .cs-date.is-current {
             color: var(--brand-orange);
         }
-        .history-body .section-heading {
+        .cs-title {
             font-size: 0.9375rem;
             font-weight: 500;
-            margin-top: 0.125rem;
+            color: var(--color-text-primary);
             margin-bottom: 0.25rem;
         }
-        .history-body .body-text {
+        .cs-text {
             font-size: 0.8125rem;
             color: var(--color-text-tertiary);
             line-height: 1.6;
         }
-        .history-body .body-text a,
-        .history-body .body-text .caroda-mark {
+        .cs-text a {
             color: var(--color-text-secondary);
+        }
+        @media (max-width: 767px) {
+            .cs-layout {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+            .cs-index {
+                top: 0;
+                z-index: 5;
+                background: var(--color-background-primary);
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.4rem;
+                padding: 0.5rem 0;
+            }
+            .cs-index a {
+                border-left: 0;
+                border: 0.5px solid var(--color-border-tertiary);
+                border-radius: var(--border-radius-md);
+                padding: 0.3rem 0.6rem;
+            }
+            .cs-index a::before,
+            .cs-index a span {
+                display: none;
+            }
+            .cs-index a.is-active {
+                border-color: var(--color-text-primary);
+                color: var(--color-text-primary);
+            }
+            .cs-index a.is-current.is-active {
+                border-color: var(--brand-orange);
+                color: var(--brand-orange);
+            }
         }
 
         .link-brand {
@@ -332,77 +550,129 @@
             </div>
         </section>
 
-        <section class="mb-16 grid grid-cols-1 md:grid-cols-2 gap-5">
-            <div class="card-base p-6 no-break">
+        <section class="mb-10">
+            <div class="card-base p-6 no-break services-row">
                 <span class="section-label" style="color: var(--brand-orange);"><span class="dot is-orange"></span>Services · Active</span>
                 <h3 class="section-heading">Internal R&amp;D focus</h3>
                 <p class="body-text">
                     Current operations are strictly focused on internal R&amp;D, meaning general market development services are unavailable. However, we're always open for a chat with fellow innovators and industry experts.
                 </p>
             </div>
-            <div class="p-6 no-break" style="border: 1px dashed var(--brand-orange-soft); background: var(--brand-orange-surface); border-radius: var(--border-radius-lg);">
-                <span class="section-label" style="color: var(--brand-orange-deep);"><span class="dot" style="background: var(--brand-orange);"></span>In Development</span>
-                <h3 class="section-heading" style="color: var(--brand-orange-deep);">AI Governance Initiative</h3>
-                <p class="leading-relaxed" style="color: var(--brand-orange-deep);">
-                    A new project will be released soon in the field of AI compliance. Stay tuned for updates!
-                </p>
-            </div>
         </section>
 
-        <section class="mb-10 history-section no-break">
-            <span class="section-label" style="margin-bottom: 1.5rem;">History &amp; Experience</span>
-            <div class="history-list">
+        <section class="mb-16">
+            <h2 class="section-title"><span class="eyebrow">Portfolio · 2014 — now</span>Case Studies</h2>
+            <div class="cs-layout">
+                <nav class="cs-index" aria-label="Timeline">
+                    <a href="#now" data-target="now" class="is-current">2026 — now<span>One mastery engine · two products</span></a>
+                    <a href="#restructuring" data-target="restructuring">Oct 2025<span>Restructuring Complete</span></a>
+                    <a href="#new-focus" data-target="new-focus">Jul 2025<span>New Focus</span></a>
+                    <a href="#caroda" data-target="caroda">2016 — Jan 2025<span>Caroda Exit</span></a>
+                    <a href="#pivot" data-target="pivot">2016<span>Product Pivot</span></a>
+                    <a href="#foundation" data-target="foundation">2014<span>Foundation</span></a>
+                </nav>
+                <div class="cs-stream">
 
-                <div class="history-item">
-                    <div class="history-date">2014</div>
-                    <div class="history-body">
-                        <h4 class="section-heading">Foundation</h4>
-                        <p class="body-text">
-                            Founded in Prague, Czechia. Initially built custom software used by customers such as banks and Fortune 500 companies.
-                        </p>
+                    <div class="cs-entry" id="now">
+                        <span class="cs-date is-current">2026 — now</span>
+                        <div class="card-base p-6 no-break case-card">
+                            <div class="case-head">
+                                <div class="engine-mark" aria-hidden="true">ENG</div>
+                                <div>
+                                    <h3 class="section-heading">Cambridge English mastery engine</h3>
+                                    <div class="case-meta">EdTech · 2026 — one engine, two channels</div>
+                                </div>
+                            </div>
+                            <p class="body-text">
+                                Exam practice that forces recall instead of recognition. Open-answer exercises such as sentence transformations and gap fills are validated against every accepted phrasing, contraction and word order, not just multiple choice. Every mistake is explained, and progress is tracked per grammar concept and vocabulary topic.
+                            </p>
+                            <div class="case-stats">
+                                <div class="case-stat"><div class="value">&gt;30,000</div><div class="label">Exercises</div></div>
+                                <div class="case-stat"><div class="value">82</div><div class="label">Topics, and counting</div></div>
+                                <div class="case-stat"><div class="value">B2 · C1</div><div class="label">Cambridge</div></div>
+                            </div>
+                            <div class="channel-split">
+                                <div>
+                                    <div class="channel-head">
+                                        <img src="img/ispeak-icon.png" alt="" class="channel-icon">
+                                        <span class="channel-name">Consumer</span>
+                                        <span class="pill is-live">Live</span>
+                                    </div>
+                                    <p class="body-text">
+                                        i-Speak English Practice, in partnership with the i-Speak English brand. Learners buy direct: free tier, €12.99/month.
+                                    </p>
+                                    <div class="case-footer">
+                                        <a href="https://practice.englishclassesonline.co.uk/" class="link-brand">practice.englishclassesonline.co.uk</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="channel-head">
+                                        <img src="img/engprep-icon.png" alt="" class="channel-icon">
+                                        <span class="channel-name">B2B</span>
+                                        <span class="pill">Launching soon</span>
+                                    </div>
+                                    <p class="body-text">
+                                        engprep.co.uk, a new brand for teachers and schools. Assign, auto-mark, report mastery by topic. Teacher and school tiers.
+                                    </p>
+                                    <div class="case-footer">
+                                        <a href="https://engprep.co.uk/" class="link-brand">engprep.co.uk</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="history-item">
-                    <div class="history-date">2016</div>
-                    <div class="history-body">
-                        <h4 class="section-heading">Product Pivot</h4>
-                        <p class="body-text">
-                            Shifted focus to building a proprietary IP portfolio spanning programmatic advertising, digital forensics, and microscopy image analysis.
-                        </p>
+                    <div class="cs-entry" id="restructuring">
+                        <span class="cs-date">Oct 2025</span>
+                        <div class="cs-title">Restructuring Complete</div>
+                        <p class="cs-text">Finalized intra-European transfer project and officially operating as a Spanish company.</p>
                     </div>
-                </div>
 
-                <div class="history-item">
-                    <div class="history-date">2016 — Jan 2025</div>
-                    <div class="history-body">
-                        <h4 class="section-heading">Caroda Exit</h4>
-                        <p class="body-text">
-                            One such initiative led to <span class="caroda-mark"><img src="img/caroda-icon.png" alt="" class="caroda-icon">Caroda</span>, a video ad server platform that became a major player in the CEE ad tech market. It <a href="https://adtechdaily.com/2025/02/14/r2b2-acquires-caroda-strengthening-position-as-a-leading-monetization-and-adtech-platform-in-the-cee-region/" class="link-brand">was sold</a> to R2B2.
-                        </p>
+                    <div class="cs-entry" id="new-focus">
+                        <span class="cs-date">Jul 2025</span>
+                        <div class="cs-title">New Focus</div>
+                        <p class="cs-text">Narrowed focus to R&amp;D of B2B SaaS solutions, specifically redefining field experts' relation to technology.</p>
                     </div>
-                </div>
 
-                <div class="history-item">
-                    <div class="history-date">Jul 2025</div>
-                    <div class="history-body">
-                        <h4 class="section-heading">New Focus</h4>
-                        <p class="body-text">
-                            Narrowed focus to R&amp;D of B2B SaaS solutions, specifically redefining field experts' relation to technology.
-                        </p>
+                    <div class="cs-entry" id="caroda">
+                        <span class="cs-date">2016 — Jan 2025</span>
+                        <div class="cs-title">Caroda Exit</div>
+                        <p class="cs-text" style="margin-bottom: 0.75rem;">A video ad server platform that became a major player in the CEE ad tech market. It <a href="https://adtechdaily.com/2025/02/14/r2b2-acquires-caroda-strengthening-position-as-a-leading-monetization-and-adtech-platform-in-the-cee-region/" class="link-brand">was sold</a> to R2B2.</p>
+                        <div class="card-base p-6 no-break case-card">
+                            <div class="case-head">
+                                <img src="img/caroda-icon.png" alt="" class="case-icon is-caroda">
+                                <div>
+                                    <h3 class="section-heading">Caroda</h3>
+                                    <div class="case-meta">Video ad server · Bootstrapped · 2016 — 2025 <span class="pill is-exit">Exited</span></div>
+                                </div>
+                            </div>
+                            <p class="body-text">
+                                A bootstrapped video ad server built from zero as technical co-founder. Market leader in the Czech Republic and Slovakia, upcoming in Romania, with customers worldwide. It unified direct and programmatic demand for publishers. In a market where advertiser and publisher interests often pull in opposite directions, Caroda raised quality for both by optimising on users' behaviour over time rather than on page views alone. Its Multiformat Carousel let publishers grow revenue despite declining traffic; BurdaMedia Extra reported over 50% more out-stream volume.
+                            </p>
+                            <div class="case-stats"><div class="case-stat"><div class="value">500+</div><div class="label">Websites</div></div><div class="case-stat"><div class="value">9 yrs</div><div class="label">Operated</div></div><div class="case-stat"><div class="value">CZ · SK · RO</div><div class="label">Core markets</div></div></div>
+                            <p class="body-text">
+                                Czech Republic: TV Nova, Mafra, CNN Prima News, Spirit Media. Slovakia: Zoznam. Romania: PRO TV, BurdaMedia Extra. Also Bauer Media Group, bTV Media Group and major brands worldwide. Acquired by R2B2 in February 2025.
+                            </p>
+                            <div class="case-footer" style="margin-top: 1rem;">
+                                <a href="https://www.caroda.io/" class="link-brand">caroda.io</a>
+                                <a href="https://adtechdaily.com/2025/02/14/r2b2-acquires-caroda-strengthening-position-as-a-leading-monetization-and-adtech-platform-in-the-cee-region/" class="link-brand">Acquisition announcement</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="history-item is-current">
-                    <div class="history-date">Oct 2025</div>
-                    <div class="history-body">
-                        <h4 class="section-heading">Restructuring Complete</h4>
-                        <p class="body-text">
-                            Finalized intra-European transfer project and officially operating as a Spanish company.
-                        </p>
+                    <div class="cs-entry" id="pivot">
+                        <span class="cs-date">2016</span>
+                        <div class="cs-title">Product Pivot</div>
+                        <p class="cs-text">Shifted focus to building a proprietary IP portfolio spanning programmatic advertising, digital forensics, and microscopy image analysis.</p>
                     </div>
-                </div>
 
+                    <div class="cs-entry" id="foundation">
+                        <span class="cs-date">2014</span>
+                        <div class="cs-title">Foundation</div>
+                        <p class="cs-text">Founded in Prague, Czechia. Initially built custom software used by customers such as banks and Fortune 500 companies.</p>
+                    </div>
+
+                </div>
             </div>
         </section>
 
@@ -425,5 +695,22 @@
 
     </div>
 
+    <script>
+        (function () {
+            var links = Array.prototype.slice.call(document.querySelectorAll('.cs-index a[data-target]'));
+            var targets = links.map(function (a) { return document.getElementById(a.getAttribute('data-target')); }).filter(Boolean);
+            if (!targets.length || !('IntersectionObserver' in window)) return;
+            function setActive(el) {
+                links.forEach(function (a) { a.classList.toggle('is-active', a.getAttribute('data-target') === el.id); });
+            }
+            var io = new IntersectionObserver(function (entries) {
+                var vis = entries.filter(function (e) { return e.isIntersecting; })
+                    .sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+                if (vis.length) setActive(vis[0].target);
+            }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
+            targets.forEach(function (t) { io.observe(t); });
+            setActive(targets[0]);
+        })();
+    </script>
 </body>
 </html>
