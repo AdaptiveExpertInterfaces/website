@@ -298,11 +298,11 @@
             place-items: center;
             background: var(--brand-surface);
             color: var(--brand-primary);
-            font-family: var(--font-mono);
-            font-weight: 500;
-            font-size: 0.75rem;
-            letter-spacing: 1px;
             flex-shrink: 0;
+        }
+        .engine-mark svg {
+            width: 24px;
+            height: 24px;
         }
         .pill {
             display: inline-block;
@@ -343,6 +343,7 @@
         .channel-head {
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
             gap: 0.6rem;
             margin-bottom: 0.5rem;
         }
@@ -577,14 +578,16 @@
                         <span class="cs-date is-current">2026 — now</span>
                         <div class="card-base p-6 no-break case-card">
                             <div class="case-head">
-                                <div class="engine-mark" aria-hidden="true">ENG</div>
+                                <div class="engine-mark" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="11.5" r="3"/><path d="M2 21.5c0-3 2.4-5 5.5-5s5.5 2 5.5 5"/><path d="M14.5 3h6A1.5 1.5 0 0 1 22 4.5v4a1.5 1.5 0 0 1-1.5 1.5H17l-2.5 2.2V10A1.5 1.5 0 0 1 13 8.5v-4A1.5 1.5 0 0 1 14.5 3z"/></svg>
+                                </div>
                                 <div>
-                                    <h3 class="section-heading">Cambridge English mastery engine</h3>
+                                    <h3 class="section-heading">Language mastery engine</h3>
                                     <div class="case-meta">EdTech · 2026 — one engine, two channels</div>
                                 </div>
                             </div>
                             <p class="body-text">
-                                Exam practice that forces recall instead of recognition. Open-answer exercises such as sentence transformations and gap fills are validated against every accepted phrasing, contraction and word order, not just multiple choice. Every mistake is explained, and progress is tracked per grammar concept and vocabulary topic.
+                                Exam practice that forces recall instead of recognition. Open-answer exercises such as sentence transformations and gap fills are validated against every accepted phrasing, contraction and word order, not just multiple choice. Verification is efficient: checking an answer requires no neural network. Every mistake is explained, and progress is tracked per grammar concept and vocabulary topic.
                             </p>
                             <div class="case-stats">
                                 <div class="case-stat"><div class="value">&gt;30,000</div><div class="label">Exercises</div></div>
@@ -595,7 +598,8 @@
                                 <div>
                                     <div class="channel-head">
                                         <img src="img/ispeak-icon.png" alt="" class="channel-icon">
-                                        <span class="channel-name">Consumer</span>
+                                        <span class="channel-name">i-Speak English Practice</span>
+                                        <span class="pill">B2C</span>
                                         <span class="pill is-live">Live</span>
                                     </div>
                                     <p class="body-text">
@@ -608,7 +612,8 @@
                                 <div>
                                     <div class="channel-head">
                                         <img src="img/engprep-icon.png" alt="" class="channel-icon">
-                                        <span class="channel-name">B2B</span>
+                                        <span class="channel-name">engprep.co.uk</span>
+                                        <span class="pill">B2B</span>
                                         <span class="pill">Launching soon</span>
                                     </div>
                                     <p class="body-text">
