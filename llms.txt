@@ -11,7 +11,7 @@
 
 ## Current work (2026 — now)
 
-- [Somebody AI](https://somebodyai.co/): partner project, Embodied AI, live. The product is Somebody AI's: live AI avatar agents with a face and a voice that listen, answer, show and take action on websites, in training, in meetings and in stores, rendered live in the browser rather than streamed as video. AEI's role: applied research and engineering on improving Somebody's core avatar AI, focused on quality, performance and consistency for the next generation of its avatar fleet, at planet scale.
+- [Somebody AI](https://somebodyai.co/): research, Embodied AI, live. The product is Somebody AI's: live AI avatar agents with a face and a voice that listen, answer, show and take action on websites, in training, in meetings and in stores, rendered live in the browser rather than streamed as video. AEI's role: applied research and engineering on improving Somebody's core avatar AI, focused on quality, performance and consistency for the next generation of its avatar fleet, at planet scale.
 - Language mastery engine (EdTech): Cambridge B2 and C1 exam practice that forces recall instead of recognition. Open-answer exercises (sentence transformations, gap fills) are validated against every accepted phrasing, contraction and word order; checking an answer requires no neural network. Over 30,000 exercises across 82 topics. Two products:
   - [i-Speak English Practice](https://practice.englishclassesonline.co.uk/): B2C, live, in partnership with the i-Speak English brand. Free tier, €12.99/month.
   - [engprep.co.uk](https://engprep.co.uk/): B2B, launching soon. For teachers and schools: assign, auto-mark, report mastery by topic.
