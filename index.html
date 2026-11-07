@@ -588,11 +588,20 @@
                 padding: 0.75rem 0.75rem 0.75rem 1rem; border-radius: var(--border-radius-lg);
             }
         }
+        /* compact mobile + stat rows that never overflow */
+        .case-stat { min-width: 0; }
+        .case-stat .value, .case-stat .label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        @media (max-width: 639px) {
+            .card-base.p-6 { padding: 1rem; }
+            .case-stats, .case-stats.is-four { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 1rem; }
+            .case-stat .value { font-size: 0.9375rem; }
+            .case-stat .label { font-size: 0.5625rem; letter-spacing: 0.3px; }
+        }
     </style>
 </head>
-<body class="min-h-screen py-10 px-4 sm:px-6 lg:px-8">
+<body class="min-h-screen py-3 px-2 sm:py-10 sm:px-6 lg:px-8">
 
-    <div class="page-shell max-w-4xl mx-auto p-8 md:p-12 sm:rounded no-break">
+    <div class="page-shell max-w-4xl mx-auto p-5 sm:p-8 md:p-12 sm:rounded no-break">
 
         <header class="mb-12 pb-8 flex flex-col items-center sm:flex-row sm:items-center sm:justify-between gap-4" style="border-bottom: 0.5px solid var(--color-border-tertiary);">
             <div class="aei-logo">
