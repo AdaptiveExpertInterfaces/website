@@ -1,0 +1,25 @@
+# Adaptive Expert Interfaces
+
+> Adaptive Expert Interfaces SL (AEI) is an R&D lab redefining field experts' relation to technology, with a focus on high-stakes engineering, AI governance and B2B SaaS. Founded by Carol Plangu. Operations are internal R&D only; general development services are not offered.
+
+## Company
+
+- Name: Adaptive Expert Interfaces SL
+- Founder: Carol Plangu — https://www.linkedin.com/in/carolplangu/
+- Contact: info@aei.dev
+- Website: https://aei.dev/
+
+## Current work (2026 — now)
+
+- [Somebody AI](https://somebodyai.co/): partner project, Embodied AI, live. The product is Somebody AI's: live AI avatar agents with a face and a voice that listen, answer, show and take action on websites, in training, in meetings and in stores, rendered live in the browser rather than streamed as video. AEI's role: applied research and engineering on improving Somebody's core avatar AI, focused on quality, performance and consistency for the next generation of its avatar fleet, at planet scale.
+- Language mastery engine (EdTech): Cambridge B2 and C1 exam practice that forces recall instead of recognition. Open-answer exercises (sentence transformations, gap fills) are validated against every accepted phrasing, contraction and word order; checking an answer requires no neural network. Over 30,000 exercises across 82 topics. Two products:
+  - [i-Speak English Practice](https://practice.englishclassesonline.co.uk/): B2C, live, in partnership with the i-Speak English brand. Free tier, €12.99/month.
+  - [engprep.co.uk](https://engprep.co.uk/): B2B, launching soon. For teachers and schools: assign, auto-mark, report mastery by topic.
+
+## History
+
+- Oct 2025 — Restructuring complete: intra-European transfer finalised; operating as a Spanish company.
+- Jul 2025 — New focus: R&D of B2B SaaS solutions redefining field experts' relation to technology.
+- 2016 — Jan 2025 — [Caroda](https://www.caroda.io/): bootstrapped video ad server built from zero as technical co-founder. Market leader in the Czech Republic and Slovakia, upcoming in Romania; 500+ websites over 9 years. Customers included TV Nova, Mafra, CNN Prima News, Spirit Media, Zoznam, PRO TV, BurdaMedia Extra, Bauer Media Group and bTV Media Group. [Acquired by R2B2 in February 2025](https://adtechdaily.com/2025/02/14/r2b2-acquires-caroda-strengthening-position-as-a-leading-monetization-and-adtech-platform-in-the-cee-region/).
+- 2016 — Product pivot to a proprietary IP portfolio in programmatic advertising, digital forensics and microscopy image analysis.
+- 2014 — Founded in Prague, Czechia; custom software for customers such as banks and Fortune 500 companies.
