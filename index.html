@@ -58,31 +58,36 @@
     <script src="./css/tailwind.4.1.8.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
-            --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+            --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
             --brand-primary: #D4537E;
             --brand-accent: #ED93B1;
             --brand-surface: #FBEAF0;
             --brand-deep: #72243E;
 
-            --brand-orange: #D97441;
-            --brand-orange-soft: #F2B987;
-            --brand-orange-surface: #FBEEE3;
-            --brand-orange-deep: #6B3719;
+            --brand-orange: #1B6280;
+            --brand-orange-soft: #93BFD2;
+            --brand-orange-surface: #E1EEF4;
+            --brand-orange-deep: #0C3648;
 
             --color-background-primary: #ffffff;
-            --color-background-secondary: #FBFAF6;
-            --color-text-primary: #0d0d0d;
-            --color-text-secondary: #3a3a36;
-            --color-text-tertiary: #6a6960;
-            --color-border-tertiary: #D8D5CC;
-            --border-radius-md: 4px;
-            --border-radius-lg: 6px;
+            --color-background-secondary: #E6EAED;
+            --color-text-primary: #0C1A1C;
+            --color-text-secondary: #34474A;
+            --color-text-tertiary: #66797C;
+            --color-border-tertiary: #D3E1E2;
+            --border-radius-md: 2px;
+            --border-radius-lg: 2px;
+
+            --grid-line: rgba(27,98,128,0.07);
+            --num-color: #D4537E;
+            --outline-pink: #EFC3D2;
+            --outline-blue: #A9CBDB;
         }
 
         body {
@@ -555,11 +560,39 @@
             border: 0.5px solid var(--color-border-tertiary);
             background: var(--color-background-primary);
         }
+
+        .page-shell {
+            background: var(--color-background-primary);
+            border: 0.5px solid var(--color-border-tertiary);
+        }
+
+        /* Grid ground, numbered labels, dashed pink/blue outlines */
+        body {
+            background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+            background-size: 24px 24px;
+            counter-reset: lbl;
+        }
+        .page-shell { border-color: transparent; box-shadow: 0 6px 28px rgba(15,45,58,0.08); }
+        .cs-index a { border-left-style: dashed; }
+        .section-label { counter-increment: lbl; }
+        .section-label::before {
+            content: counter(lbl, decimal-leading-zero) ' /'; margin-right: 0.5rem; color: var(--num-color);
+        }
+        .section-label .dot { display: none; }
+        .card-base { border: 1px dashed var(--outline-pink); }
+        .page-shell > section:nth-of-type(1) > .card-base:nth-child(2),
+        #now .card-base { border-color: var(--outline-blue); }
+        @media (min-width: 768px) {
+            .cs-index {
+                background: var(--color-background-primary); border: 1px dashed var(--outline-blue);
+                padding: 0.75rem 0.75rem 0.75rem 1rem; border-radius: var(--border-radius-lg);
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen py-10 px-4 sm:px-6 lg:px-8">
 
-    <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 sm:rounded no-break" style="border: 0.5px solid var(--color-border-tertiary);">
+    <div class="page-shell max-w-4xl mx-auto p-8 md:p-12 sm:rounded no-break">
 
         <header class="mb-12 pb-8 flex flex-col items-center sm:flex-row sm:items-center sm:justify-between gap-4" style="border-bottom: 0.5px solid var(--color-border-tertiary);">
             <div class="aei-logo">
@@ -569,8 +602,8 @@
                     <circle cx="28" cy="16" r="2.6" fill="#D4537E"/>
                     <rect x="36" y="13.5" width="9" height="5" rx="1" fill="#ED93B1"/>
                     <circle cx="52" cy="16" r="2.6" fill="#D4537E"/>
-                    <text x="94" y="12.125" style="font-family: var(--font-sans); font-size: 11px; font-weight: 500; letter-spacing: 1.2px;" fill="#0d0d0d">ADAPTIVE EXPERT</text>
-                    <text x="94" y="25.875" style="font-family: var(--font-sans); font-size: 11px; font-weight: 400; letter-spacing: 1.2px;" fill="#3a3a36">INTERFACES</text>
+                    <text x="94" y="12.125" style="font-family: var(--font-sans); font-size: 11px; font-weight: 500; letter-spacing: 1.2px; fill: var(--color-text-primary);">ADAPTIVE EXPERT</text>
+                    <text x="94" y="25.875" style="font-family: var(--font-sans); font-size: 11px; font-weight: 400; letter-spacing: 1.2px; fill: var(--color-text-secondary);">INTERFACES</text>
                 </svg>
             </div>
             <p class="tagline">redefining field experts'<br>relation to technology</p>
@@ -578,13 +611,13 @@
 
         <section class="mb-10 grid grid-cols-1 md:grid-cols-2 gap-5">
             <div class="card-base p-6 no-break">
-                <span class="section-label"><span class="dot"></span>About</span>
+                <span class="section-label" style="color: var(--brand-orange);"><span class="dot"></span>About</span>
                 <p class="body-text">
                     This portfolio is built on deep industry expertise, rigorous technical execution, and the discipline to be held accountable for both. That discipline means keeping pace with what each project needs to become, and not letting humans or systems drift from it.
                 </p>
             </div>
             <div class="card-base p-6 no-break">
-                <span class="section-label"><span class="dot"></span>Values</span>
+                <span class="section-label" style="color: var(--brand-orange);"><span class="dot"></span>Values</span>
                 <p class="body-text">
                     High-stakes engineering methodologies are applied to ensure simplicity and absolute reliability. AI is used to raise the bar of what software can achieve, not as a shortcut or a simple cost reducer.
                 </p>
